@@ -23,6 +23,8 @@ public class Array {
         return numOfStudents == maxSize;
     }
 
+    // Insert method:
+
     void insert(String name, int id, double grade){
 
         if(isFull()){
@@ -47,6 +49,12 @@ public class Array {
 
         array[numOfStudents] = newStudent;
         numOfStudents++;
+    }
+
+    // Insert overloading:
+
+    void insert(Student newStudent){
+        insert(newStudent.getName(), newStudent.getId(), newStudent.getGrade());
     }
 
 

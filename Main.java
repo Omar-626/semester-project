@@ -14,52 +14,39 @@ public class Main {
         students.insert("Ali", 3, 58);
         students.insert("Abdo", 3999, 74);
 
+        Student s1 = new Student("Musa", 486, 47);
+        Student s2 = new Student("Isa", 946, 70);
+        Student s3 = new Student("Hany", 791, 81);
+
+        students.insert(s1);
+        students.insert(s2);
+        students.insert(s3);
+
+        System.out.println("Display:");
         students.display();
-        System.out.println(students.getNumOfStudents());
+        System.out.println("//////////");
 
-        students.delete(62);
-        System.out.println("");
+        System.out.println("Find:");
+
+        System.out.println("Index of student with ID: " + "486" + " is " + students.find(486));
+        System.out.println("Index of student with ID: " + "418" + " is " + students.find(418));
+        System.out.println("//////////");
+
+        System.out.println("Delete:");
+        System.out.println("Number of students before delete: " + students.getNumOfStudents());
+        System.out.println("////////////");
+
+        students.delete(3);
+        students.delete(486);
+        students.delete(946);
+        students.delete(791);
+        students.delete(386); // Not existed ID
+        System.out.println("Display after delete:");
         students.display();
-        System.out.println(students.getNumOfStudents());
 
-//        students.find(988979);
-//
-//
-//
-//
-//        students.display();
-//        System.out.println("Num of students: " + students.getNumOfStudents());
-//
-//        Student s8 = new Student("Abbas", 7899, -5);
-//
-//
-//        students.delete(3);
-//        students.delete(48);
-//        students.delete(11);
-//
-//
-//
-//        System.out.println("");
-//
-//        students.display();
-//        System.out.println("Num of students: " + students.getNumOfStudents());
-//
-//        Student s1 = new Student("Musa", 486, 47);
-//        Student s2 = new Student("Isa", 946, 70);
-//        Student s3 = new Student("Hany", 791, 81);
-//
-//        students.insert(s1);
-//        students.insert(s2);
-//        students.insert(s3);
-//
-//
-//        System.out.println("");
-//
-//        students.display();
-//        System.out.println("Num of students: " + students.getNumOfStudents());
-
-
-
+        System.out.println("////////////");
+        System.out.println("Number of students after delete: " + students.getNumOfStudents());
+        System.out.println("////////////");
 
 
     }
