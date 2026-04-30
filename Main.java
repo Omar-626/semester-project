@@ -6,6 +6,7 @@ public class Main {
 
         Array students = new Array(10);
 
+
         students.insert("Omar", 11, 89);
         students.insert("Amr", 23, 68);
         students.insert("Nedal", 48, 79);
@@ -13,35 +14,49 @@ public class Main {
         students.insert("Ali", 3, 58);
         students.insert("Abdo", 3999, 74);
 
-
         students.display();
-        System.out.println("Num of students: " + students.getNumOfStudents());
+        System.out.println(students.getNumOfStudents());
 
-
-        students.delete(3);
-        students.delete(48);
-        students.delete(11);
-
-
-
+        students.delete(62);
         System.out.println("");
-
         students.display();
-        System.out.println("Num of students: " + students.getNumOfStudents());
+        System.out.println(students.getNumOfStudents());
 
-        Student s1 = new Student("Musa", 486, 47);
-        Student s2 = new Student("Isa", 946, 70);
-        Student s3 = new Student("Hany", 791, 81);
-
-        students.insert(s1);
-        students.insert(s2);
-        students.insert(s3);
-
-
-        System.out.println("");
-
-        students.display();
-        System.out.println("Num of students: " + students.getNumOfStudents());
+//        students.find(988979);
+//
+//
+//
+//
+//        students.display();
+//        System.out.println("Num of students: " + students.getNumOfStudents());
+//
+//        Student s8 = new Student("Abbas", 7899, -5);
+//
+//
+//        students.delete(3);
+//        students.delete(48);
+//        students.delete(11);
+//
+//
+//
+//        System.out.println("");
+//
+//        students.display();
+//        System.out.println("Num of students: " + students.getNumOfStudents());
+//
+//        Student s1 = new Student("Musa", 486, 47);
+//        Student s2 = new Student("Isa", 946, 70);
+//        Student s3 = new Student("Hany", 791, 81);
+//
+//        students.insert(s1);
+//        students.insert(s2);
+//        students.insert(s3);
+//
+//
+//        System.out.println("");
+//
+//        students.display();
+//        System.out.println("Num of students: " + students.getNumOfStudents());
 
 
 

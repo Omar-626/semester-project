@@ -120,48 +120,22 @@ public class Array {
 
     // Delete method:
 
-    private Student delete(int idTarget, int low, int high){
+    Student delete(int idTarget){
 
-        comparisons++;
-        if(isEmpty()){
-            System.out.println("Array is empty");
-            return null;
-        }
-
-        comparisons++;
-        if(low > high){
-            System.out.println("Could not find ID:" + idTarget + " to delete");
-            return null;
-        }
-
-        int mid = low + (high - low) / 2;
-        Student deletedStudent;
-
-        comparisons++;
-        if(idTarget == array[mid].getId()){
-            deletedStudent = array[mid];
-            for(int i = mid; i < numOfStudents - 1; i++){
+        if(find(idTarget) != -1){
+            int indexToDelete = find(idTarget);
+            Student deletedStudent = array[indexToDelete];
+            for(int i = indexToDelete; i < numOfStudents - 1; i++){
                 comparisons++;
                 array[i] = array[i + 1];
                 swaps++;
             }
+
             numOfStudents--;
             return deletedStudent;
         }
+        return null;
 
-        comparisons++;
-        if(idTarget > array[mid].getId()){
-            return delete(idTarget, mid + 1, high);
-        }
-
-        return delete(idTarget, low, mid - 1);
-    }
-
-    // Delete wrapper method:
-
-    Student delete(int idTarget){
-
-        return delete(idTarget, 0, numOfStudents - 1);
     }
 
     // Display students data:
