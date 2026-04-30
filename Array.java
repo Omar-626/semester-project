@@ -23,65 +23,32 @@ public class Array {
         return numOfStudents == maxSize;
     }
 
-    // Insert method:
+    void insert(String name, int id, double grade){
 
-     private void insert(String name, int id, double grade, int low, int high){
-
-        comparisons++;
-         if(isEmpty()) {
-             array[0] = new Student(name, id, grade);
-             numOfStudents++;
-             return;
-         }
-
-         comparisons++;
-         if(isFull()) {
-             System.out.println("Array is full, can't insert more students");
-             return;
-         }
+        if(isFull()){
+            System.out.println("Array is full, Couldn't insert more students");
+            return;
+        }
 
         Student newStudent = new Student(name, id, grade);
-
-         comparisons++;
-        if(low > high){
-            for(int i = numOfStudents - 1; i >= low; i--){
-                comparisons++;
-                array[i + 1] = array[i];
-                swaps++;
+        for(int i = 0; i < numOfStudents; i++){
+            comparisons++;
+            if(newStudent.getId() < array[i].getId()){
+                for(int j = numOfStudents - 1; j >= i; j--){
+                    comparisons++;
+                    array[j + 1] = array[j];
+                    swaps++;
+                }
+                array[i] = newStudent;
+                numOfStudents++;
+                return;
             }
-
-            array[low] = newStudent;
-            numOfStudents++;
-            return;
         }
 
-        int mid = low + (high - low) / 2;
-
-        comparisons++;
-        if(id == array[mid].getId()){
-            throw new IllegalArgumentException("Inserted ID already exists");
-        }
-
-        comparisons++;
-        if(id > array[mid].getId()) {
-            insert(name, id, grade, mid + 1, high);
-            return;
-        }
-
-        insert(name, id, grade, low, mid - 1);
+        array[numOfStudents] = newStudent;
+        numOfStudents++;
     }
 
-    // Insert wrapper method:
-
-    void insert(String name, int id, double grade){
-        insert(name, id, grade, 0, numOfStudents - 1);
-    }
-
-    // Insert wrapper method:
-
-    void insert(Student newStudent){
-        insert(newStudent.getName(), newStudent.getId(), newStudent.getGrade(), 0, numOfStudents - 1);
-    }
 
     // Find method:
 
@@ -122,8 +89,8 @@ public class Array {
 
     Student delete(int idTarget){
 
-        if(find(idTarget) != -1){
-            int indexToDelete = find(idTarget);
+        int indexToDelete = find(idTarget);
+        if(indexToDelete != -1){
             Student deletedStudent = array[indexToDelete];
             for(int i = indexToDelete; i < numOfStudents - 1; i++){
                 comparisons++;
