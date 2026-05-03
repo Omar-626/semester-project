@@ -23,8 +23,8 @@ public class Array {
         return numOfStudents == maxSize;
     }
 
-    // Insert method: (Time complexity: O(n))
-
+    // Insert method: (Time complexity: O(n) → linear search to then position + shifting elements)
+    //                (Space complexity: O(1) → no extra space used; operates in-place with a few variables)
     void insert(String name, int id, double grade){
 
         if(isFull()){
@@ -59,7 +59,8 @@ public class Array {
     }
 
 
-    // Find method: (Time complexity: log(n))
+    // Find method: (Time complexity: O(log n) → recursive binary search)
+    //              (Space complexity: O(log n) → due to the recursion call stack in binary search)
 
     private int find(int idTarget, int low, int high){
 
@@ -94,7 +95,8 @@ public class Array {
         return find(idTarget, 0, numOfStudents - 1);
     }
 
-    // Delete method: (Time complexity: O(n))
+    // Delete method: (Time complexity: O(n) → binary search then shifting elements)
+    //                (Space complexity: O(1) → removal is done in-place without additional memory)
 
     Student delete(int idTarget){
 
@@ -115,7 +117,8 @@ public class Array {
 
     }
 
-    // Display students data: (Time complexity: O(n))
+    // Display students data: (Time complexity: O(n) → full traversal of array)
+    //                        (Space complexity: O(1) → only uses a loop variable; no extra memory allocated)
 
     void display(){
         for(int i = 0; i < numOfStudents; i++){
