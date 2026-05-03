@@ -23,7 +23,7 @@ public class Array {
         return numOfStudents == maxSize;
     }
 
-    // Insert method:
+    // Insert method: (Time complexity: O(n))
 
     void insert(String name, int id, double grade){
 
@@ -33,6 +33,7 @@ public class Array {
         }
 
         Student newStudent = new Student(name, id, grade);
+
         for(int i = 0; i < numOfStudents; i++){
             comparisons++;
             if(newStudent.getId() < array[i].getId()){
@@ -58,7 +59,7 @@ public class Array {
     }
 
 
-    // Find method:
+    // Find method: (Time complexity: log(n))
 
     private int find(int idTarget, int low, int high){
 
@@ -93,11 +94,12 @@ public class Array {
         return find(idTarget, 0, numOfStudents - 1);
     }
 
-    // Delete method:
+    // Delete method: (Time complexity: O(n))
 
     Student delete(int idTarget){
 
         int indexToDelete = find(idTarget);
+
         if(indexToDelete != -1){
             Student deletedStudent = array[indexToDelete];
             for(int i = indexToDelete; i < numOfStudents - 1; i++){
@@ -113,7 +115,7 @@ public class Array {
 
     }
 
-    // Display students data:
+    // Display students data: (Time complexity: O(n))
 
     void display(){
         for(int i = 0; i < numOfStudents; i++){

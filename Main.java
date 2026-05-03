@@ -12,11 +12,11 @@ public class Main {
         students.insert("Nedal", 48, 79);
         students.insert("Mahmoud", 62, 92);
         students.insert("Ali", 3, 58);
-        students.insert("Abdo", 3999, 74);
+        students.insert("Abdo", 4, 74);
 
-        Student s1 = new Student("Musa", 486, 47);
-        Student s2 = new Student("Isa", 946, 70);
-        Student s3 = new Student("Hany", 791, 81);
+        Student s1 = new Student("Musa", 50, 47);
+        Student s2 = new Student("Isa", 20, 70);
+        Student s3 = new Student("Hany", 33, 81);
 
         students.insert(s1);
         students.insert(s2);
@@ -28,8 +28,8 @@ public class Main {
 
         System.out.println("Find:");
 
-        System.out.println("Index of student with ID: " + "486" + " is " + students.find(486));
-        System.out.println("Index of student with ID: " + "418" + " is " + students.find(418));
+        System.out.println("Index of student with ID: " + "48" + " is " + students.find(48));
+        System.out.println("Index of student with ID: " + "101" + " is " + students.find(101));
         System.out.println("//////////");
 
         System.out.println("Delete:");
@@ -37,9 +37,9 @@ public class Main {
         System.out.println("////////////");
 
         students.delete(3);
-        students.delete(486);
-        students.delete(946);
-        students.delete(791);
+        students.delete(48);
+        students.delete(62);
+        students.delete(4);
         students.delete(386); // Not existed ID
         System.out.println("Display after delete:");
         students.display();
